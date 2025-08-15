@@ -21,7 +21,7 @@ pipeline {
         stage("Regression Automation Test") {
             steps {
                 git 'https://github.com/omgoyal/PlaywrightFramework'
-                sh 'mvn clean test -Dsurefire.suiteXmlFiles=testng_regression.xml'
+                bat "mvn clean test -Dsurefire.suiteXmlFiles=testng_regression.xml"
             }
         }
 
