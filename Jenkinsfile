@@ -23,14 +23,10 @@ pipeline {
                 git 'https://github.com/omgoyal/PlaywrightFramework'
                 bat "mvn clean test -Dsurefire.suiteXmlFiles=testng_regression.xml -Dsurefire.skipAfterFailureCount=0 -Dmaven.test.failure.ignore=true"
             }
-            
-            
         }
 
         stage('Publish Extent Report') {
-			 when {
-                always() // Run regardless of earlier failures
-            }
+			
             steps {
                 publishHTML([
                     allowMissing: false,
@@ -46,8 +42,8 @@ pipeline {
     }
 
     post {
-        always {
-            echo "Pipeline finished — check the Extent report for details."
+        success {
+            echo 'Pipeline completed successfully!'
         }
         failure {
             echo 'Pipeline failed!'
