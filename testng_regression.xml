@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Open Cart Playwright Regression Suite" thread-count="4" parallel="false" verbose="4">
+
+<listeners>
+	<listener class-name="com.qa.listener.ExtentReportListener" />	
+</listeners>
+
+  <test name="Open Cart Home Page Test Chrome">
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.qa.test.HomePageTest"/>
+    </classes>
+  </test> 
+  
+    <test name="Open Cart Login Page Test Firefox">
+     <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.qa.test.LoginPageTest"/>
+    </classes>
+  </test> 
+  
+    <test name="Open Cart Home Page Test Edge">
+     <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="com.qa.test.HomePageTest"/>
+    </classes>
+  </test> 
+  
+    <test name="Open Cart Login Page Test Safari">
+    <parameter name="browser" value="safari"/>
+    <classes>
+      <class name="com.qa.test.LoginPageTest"/>
+    </classes>
+  </test> 
+  
+  
+  
+</suite> 
